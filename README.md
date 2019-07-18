@@ -1,2 +1,2 @@
-# list_examples
-how to use list.h from linux kernel
+# queue_examples
+how to use sys/queue.h from linux kernel
