@@ -26,7 +26,7 @@ int main() {
     /* 1. Insert an item at list's head*/
     char *duck_name = "duck";
     animal duck;
-    memcpy(&duck.name, duck_name, sizeof(duck_name));
+    memcpy(&duck.name, duck_name, strlen(duck_name) + 1);
     printf("Insert head %s\n", duck.name);
     LIST_INSERT_HEAD(&bird_list, &duck, link);
 
@@ -39,7 +39,7 @@ int main() {
     /* 2. Insert an item after another item in the list */
     char *chicken_name = "chicken";
     animal chicken;
-    memcpy(&chicken.name, chicken_name, sizeof(chicken_name));
+    memcpy(&chicken.name, chicken_name, strlen(chicken_name) + 1);
     printf("Insert %s after %s\n", chicken.name, duck.name);
     LIST_INSERT_AFTER(&duck, &chicken, link);
 
@@ -52,7 +52,7 @@ int main() {
     /* 3. Insert an item before another item in the list */
     char *goose_name = "goose";
     animal goose;
-    memcpy(&goose.name, goose_name, sizeof(goose_name));
+    memcpy(&goose.name, goose_name, strlen(goose_name) + 1);
     printf("Insert %s before %s\n", goose.name, chicken.name);
     LIST_INSERT_BEFORE(&chicken, &goose, link);
 
@@ -65,7 +65,7 @@ int main() {
     /* 4. Insert an item at the head of the list */
     char *hen_name = "hen";
     animal hen;
-    memcpy(&hen.name, hen_name, sizeof(hen_name));
+    memcpy(&hen.name, hen_name, strlen(hen_name) + 1);
     printf("Insert %s at the head of the list\n", hen.name);
     LIST_INSERT_HEAD(&bird_list, &hen, link);
 

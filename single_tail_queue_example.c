@@ -26,7 +26,7 @@ int main() {
     /* 1. Insert an item at single tail queue's head*/
     char *duck_name = "duck";
     animal duck;
-    memcpy(&duck.name, duck_name, sizeof(duck_name));
+    memcpy(&duck.name, duck_name, strlen(duck_name) + 1);
     printf("Insert head %s\n", duck.name);
     STAILQ_INSERT_HEAD(&bird_stailq, &duck, link);
 
@@ -39,7 +39,7 @@ int main() {
     /* 2. Insert an item at single tail queue's tail*/
     char *sparrow_name = "sparrow";
     animal sparrow;
-    memcpy(&sparrow.name, sparrow_name, sizeof(sparrow_name));
+    memcpy(&sparrow.name, sparrow_name, strlen(sparrow_name) + 1);
     printf("Insert tail %s\n", sparrow.name);
     STAILQ_INSERT_TAIL(&bird_stailq, &sparrow, link);
 
@@ -52,7 +52,7 @@ int main() {
     /* 3. Insert an item after another item in the single tail queue */
     char *chicken_name = "chicken";
     animal chicken;
-    memcpy(&chicken.name, chicken_name, sizeof(chicken_name));
+    memcpy(&chicken.name, chicken_name, strlen(chicken_name) + 1);
     printf("Insert %s after %s\n", chicken.name, duck.name);
     STAILQ_INSERT_AFTER(&bird_stailq, &duck, &chicken, link);
 
@@ -113,20 +113,20 @@ int main() {
     /* 9.1 Insert an item at single tail queue's head*/
     char *bee_name = "bee";
     animal bee;
-    memcpy(&bee.name, bee_name, sizeof(bee_name));
+    memcpy(&bee.name, bee_name, strlen(bee_name) + 1);
     printf("Insert head %s\n", bee.name);
     STAILQ_INSERT_HEAD(&insect_stailq, &bee, link);
 
     char *cricket_name = "cricket";
     animal cricket;
-    memcpy(&cricket.name, cricket_name, sizeof(cricket_name));
+    memcpy(&cricket.name, cricket_name, strlen(cricket_name) + 1);
     int i = 0;
     printf("Insert head %s\n", cricket.name);
     STAILQ_INSERT_HEAD(&insect_stailq, &cricket, link);
 
     char *wasp_name = "wasp";
     animal wasp;
-    memcpy(&wasp.name, wasp_name, sizeof(wasp_name));
+    memcpy(&wasp.name, wasp_name, strlen(wasp_name) + 1);
     printf("Insert head %s\n", wasp.name);
     STAILQ_INSERT_HEAD(&insect_stailq, &wasp, link);
 
