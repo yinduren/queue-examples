@@ -144,6 +144,7 @@ int main() {
         printf("bird name is %s\n", bird->name);
     printf("\n");
 
+    /* 9.2 Concat two single tail queue */
     printf("Concat insect single tail queue into bird single tail queue!\n\n");
     STAILQ_CONCAT(&bird_stailq, &insect_stailq);
 

@@ -12,3 +12,7 @@ How to use sys/queue.h from linux kernel.
 3. To run single_tail_queue_example.c on linux
     gcc single_tail_queue_example.c
     ./a.out
+
+4. To run tail_queue_example.c on linux
+    gcc tail_queue_example.c
+    ./a.out
