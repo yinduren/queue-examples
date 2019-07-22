@@ -27,7 +27,7 @@ int main() {
     char *duck_name = "duck";
     animal duck;
     memcpy(&duck.name, duck_name, sizeof(duck_name));
-    printf("Insert %s\n", duck.name);
+    printf("Insert head %s\n", duck.name);
     SLIST_INSERT_HEAD(&bird_slist, &duck, link);
 
     /* Show every item in single list */
