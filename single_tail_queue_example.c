@@ -94,13 +94,70 @@ int main() {
         printf("bird name is %s\n", bird->name);
     printf("\n");
 
-    /* 8. If  single tail queue is empty */
+    /* 8. If single tail queue is empty */
     if (STAILQ_EMPTY(&bird_stailq)) {
         printf("The bird single tail queue is empty\n");
     } else {
         printf("The bird single tail queue is not empty\n");
     }
     printf("\n");
+
+    /* 9. Concat two single tail queue */
+    printf("Create insect single tail queue.\n");
+    printf("\n");
+
+    /* Create empty single tail queue */
+    animal_head insect_stailq;
+    STAILQ_INIT(&insect_stailq);
+
+    /* 9.1 Insert an item at single tail queue's head*/
+    char *bee_name = "bee";
+    animal bee;
+    memcpy(&bee.name, bee_name, sizeof(bee_name));
+    printf("Insert head %s\n", bee.name);
+    STAILQ_INSERT_HEAD(&insect_stailq, &bee, link);
+
+    char *cricket_name = "cricket";
+    animal cricket;
+    memcpy(&cricket.name, cricket_name, sizeof(cricket_name));
+    int i = 0;
+    printf("Insert head %s\n", cricket.name);
+    STAILQ_INSERT_HEAD(&insect_stailq, &cricket, link);
+
+    char *wasp_name = "wasp";
+    animal wasp;
+    memcpy(&wasp.name, wasp_name, sizeof(wasp_name));
+    printf("Insert head %s\n", wasp.name);
+    STAILQ_INSERT_HEAD(&insect_stailq, &wasp, link);
+
+    /* Show every item in single tail queue */
+    printf("\n");
+    printf("Insect single tail queue has:\n");
+    animal *insect = NULL;
+    STAILQ_FOREACH(insect, &insect_stailq, link)
+        printf("insect name is %s\n", insect->name);
+    printf("\n");
+
+    printf("bird single tail queue has:\n");
+    bird = NULL;
+    STAILQ_FOREACH(bird, &bird_stailq, link)
+        printf("bird name is %s\n", bird->name);
+    printf("\n");
+
+    printf("Concat insect single tail queue into bird single tail queue!\n\n");
+    STAILQ_CONCAT(&bird_stailq, &insect_stailq);
+
+    /* Show every item in single tail queue */
+    printf("Bird single tail queue has:\n");
+    bird = NULL;
+    STAILQ_FOREACH(bird, &bird_stailq, link)
+        printf("Name is %s\n", bird->name);
+    printf("\n");
+
+    if (STAILQ_EMPTY(&insect_stailq)) {
+        printf("The insect single tail queue is empty\n");
+        printf("\n");
+    }
 
     return 0;
 }
