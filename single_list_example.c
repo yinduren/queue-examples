@@ -65,13 +65,21 @@ int main() {
     /* 5. The first item in the single list */
     bird = NULL;
     bird = SLIST_FIRST(&bird_slist);
-    printf("The first bird in the single list is %s\n", bird->name);
+    if (bird != NULL) {
+        printf("The first bird in the single list is %s\n", bird->name);
+    } else {
+        printf("The single list is empty, no first bird found\n");
+    }
     printf("\n");
 
     /* 6. The next item of the specified item in the single list */
     bird = NULL;
     bird = SLIST_NEXT(&hen, link);
-    printf("The next bird of %s, is %s\n", hen.name, bird->name);
+    if (bird != NULL) {
+        printf("The next bird of %s, is %s\n", hen.name, bird->name);
+    } else {
+        printf("The next bird of %s is NULL\n", hen.name);
+    }
     printf("\n");
 
     /* 7. Remove an item in the single list */

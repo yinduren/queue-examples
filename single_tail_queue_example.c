@@ -65,13 +65,21 @@ int main() {
     /* 4. The first item in the single tail queue */
     bird = NULL;
     bird = STAILQ_FIRST(&bird_stailq);
-    printf("The first bird in the single tail queue is %s\n", bird->name);
+    if (bird != NULL) {
+        printf("The first bird in the single tail queue is %s\n", bird->name);
+    } else {
+        printf("The single tail queue is empty, no first bird found\n");
+    }
     printf("\n");
 
     /* 5. The next item of the specified item in the single tail queue */
     bird = NULL;
     bird = STAILQ_NEXT(&chicken, link);
-    printf("The next bird of %s, is %s\n", chicken.name, bird->name);
+    if (bird != NULL) {
+        printf("The next bird of %s, is %s\n", chicken.name, bird->name);
+    } else {
+        printf("The next bird of %s is NULL\n", chicken.name);
+    }
     printf("\n");
 
     /* 6. Remove the head item in the single tail queue */

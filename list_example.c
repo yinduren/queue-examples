@@ -78,13 +78,21 @@ int main() {
     /* 5. The first item in the list */
     bird = NULL;
     bird = LIST_FIRST(&bird_list);
-    printf("The first bird in the list is %s\n", bird->name);
+    if (bird != NULL) {
+        printf("The first bird in the list is %s\n", bird->name);
+    } else {
+        printf("The list is empty, no first bird found\n");
+    }
     printf("\n");
 
     /* 6. The next item of the specified item in the list */
     bird = NULL;
     bird = LIST_NEXT(&goose, link);
-    printf("The next bird of %s, is %s\n", goose.name, bird->name);
+    if (bird != NULL) {
+        printf("The next bird of %s, is %s\n", goose.name, bird->name);
+    } else {
+        printf("The next bird of %s is NULL\n", goose.name);
+    }
     printf("\n");
 
     /* 7. Remove an item in the list */
@@ -97,7 +105,7 @@ int main() {
         printf("bird name is %s\n", bird->name);
     printf("\n");
 
-    /* 7. If  list is empty */
+    /* 8. If list is empty */
     if (LIST_EMPTY(&bird_list)) {
         printf("The bird list is empty\n");
     } else {

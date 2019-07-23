@@ -78,25 +78,41 @@ int main() {
     /* 5. The first item in the tail queue */
     bird = NULL;
     bird = TAILQ_FIRST(&bird_tailq);
-    printf("The first bird in the tail queue is %s\n", bird->name);
+    if (bird != NULL) {
+        printf("The first bird in the tail queue is %s\n", bird->name);
+    } else {
+        printf("The tail queue is empty, no first bird found\n");
+    }
     printf("\n");
 
     /* 6. The last item in the tail queue */
     bird = NULL;
     bird = TAILQ_LAST(&bird_tailq, animal_head_);
-    printf("The last bird in the tail queue is %s\n", bird->name);
+    if (bird != NULL) {
+        printf("The last bird in the tail queue is %s\n", bird->name);
+    } else {
+        printf("The tail queue is empty, no last bird found\n");
+    }
     printf("\n");
 
     /* 7. The next item of the specified item in the tail queue */
     bird = NULL;
     bird = TAILQ_NEXT(&chicken, link);
-    printf("The next bird of %s, is %s\n", chicken.name, bird->name);
+    if (bird != NULL) {
+        printf("The next bird of %s, is %s\n", chicken.name, bird->name);
+    } else {
+        printf("The next bird of %s is NULL\n", chicken.name);
+    }
     printf("\n");
 
     /* 8. The pre item of the specified item in the tail queue */
     bird = NULL;
     bird = TAILQ_PREV(&chicken, animal_head_, link);
-    printf("The pre bird of %s, is %s\n", chicken.name, bird->name);
+    if (bird != NULL) {
+        printf("The pre bird of %s, is %s\n", chicken.name, bird->name);
+    } else {
+        printf("The pre bird of %s is NULL\n", chicken.name);
+    }
     printf("\n");
 
     /* 9. Remove an item in the tail queue */
@@ -115,6 +131,7 @@ int main() {
     TAILQ_FOREACH(bird, &bird_tailq, link)
         printf("bird name is %s\n", bird->name);
     printf("\n");
+
     /* 11. If tail queue is empty */
     if (TAILQ_EMPTY(&bird_tailq)) {
         printf("The bird tail queue is empty\n");
