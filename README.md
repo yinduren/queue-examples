@@ -16,3 +16,7 @@ How to use sys/queue.h from linux kernel.
 4. To run tail_queue_example.c on linux
     gcc tail_queue_example.c
     ./a.out
+
+5. To run circle_queue_example.c on linux
+    gcc circle_queue_example.c
+    ./a.out
